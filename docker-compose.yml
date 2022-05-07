@@ -1,0 +1,30 @@
+version: "3.7"
+services:
+  server:
+    build: ./
+    command: air
+    image: casino-royale
+    container_name: server
+    ports:
+      - 8080:8080
+    volumes:
+      - code-sync:/workspace-service/:nocopy
+    env_file:
+      - config/env/development.env
+    environment:
+      - PORT=8080
+    depends_on:
+      - db
+  db:
+    image: postgres:14-alpine
+    container_name: db
+    ports:
+      - 5432:5432
+    volumes:
+      - db-data-sync:/var/lib/postgresql/data
+    env_file:
+      - config/env/development.env
+volumes:
+  code-sync:
+    external: true
+  db-data-sync: {}

@@ -1,0 +1,8 @@
+version: "2"
+
+options:
+  verbose: true
+syncs:
+  code-sync:
+    src: "./"
+    sync_excludes: []
