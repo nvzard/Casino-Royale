@@ -13,9 +13,9 @@
 <!-- An API to simulate a deck of cards -->
 ## Documentation
 
-- [DEVELOPMENT SETUP](#getting-started-with-development)
-- [API DOCUMENTATION](#api-documentation)
-- [FUTURE IMPROVEMENTS](#api-documentation)
+- [Development Setup](#getting-started-with-development)
+- [API Documentation](#api-documentation)
+- [Future Improvements](#api-documentation)
 
 ---
 ## Development
