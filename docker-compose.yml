@@ -8,7 +8,7 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - code-sync:/workspace-service/:nocopy
+      - code-sync:/casino-royale/:nocopy
     env_file:
       - config/env/development.env
     environment:
