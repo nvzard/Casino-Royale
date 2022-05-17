@@ -14,7 +14,7 @@
 ---
 ## Summary
 
-This project exposes an API to simulate deck of cards which can be used card games.
+This project exposes an API to simulate deck of cards which can be used for card games.
 
 ## Development
 
@@ -69,13 +69,13 @@ make clean
 ## API Documentation
 
 ```
-GET  /healthcheck          # ok
-POST /deck                 # create new deck (query parameters: shuffle, cards)
-GET  /deck/:deck_id        # open deck by id
-POST  /deck/:deck_id/draw  # draw cards from the deck (query parameters: count)
+GET   /healthcheck          # ok
+POST  /deck                 # create new deck (query parameters: shuffle, cards)
+GET   /deck/:deck_id        # open deck by id
+POST  /deck/:deck_id/draw   # draw cards from the deck (query parameters: count)
 ```
 
-### 1. Create Deck
+### 1. Create a Deck
 
 ```
 POST /deck
@@ -116,7 +116,7 @@ POST /deck?shuffle=true&cards=AS,2S
 }
 ```
 
-### 2. Open Deck
+### 2. Open a Deck
 
 ```
 GET /deck/:deck_id
