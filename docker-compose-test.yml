@@ -1,0 +1,24 @@
+version: "3.7"
+services:
+  server-test:
+    build: ./
+    command: go test -v ./server ./model -covermode=count -coverprofile=/casino-royale/coverage.out
+    volumes:
+      - ./coverage.out:/casino-royale/coverage.out
+    image: server-test
+    container_name: server-test
+    ports:
+      - 8080:8080
+    env_file:
+      - config/env/test.env
+    environment:
+      - ENV=test
+    depends_on:
+      - db-test
+  db-test:
+    image: postgres:14-alpine
+    container_name: db-test
+    ports:
+      - 5432:5432
+    env_file:
+      - config/env/test.env

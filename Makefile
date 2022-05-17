@@ -17,8 +17,7 @@ start:
 
 stop: clean
 
-# clean: clean-dev clean-dist clean-deps clean-test
-clean: clean-dev clean-dist clean-deps
+clean: clean-dev clean-dist clean-deps clean-test
 
 clean-dist:
 	@rm -rf tmp/
@@ -29,12 +28,12 @@ clean-deps:
 clean-dev:
 	@docker-sync-stack clean
 
-# clean-test:
-# 	@docker-compose -f docker-compose-test.yml rm -f
+clean-test:
+	@docker-compose -f docker-compose-test.yml rm -f
 
-# test: clean-test
-# 	@docker-compose -f docker-compose-test.yml build
-# 	@docker-compose -f docker-compose-test.yml up --abort-on-container-exit --exit-code-from server-test
+test: clean-test
+	@docker-compose -f docker-compose-test.yml build
+	@docker-compose -f docker-compose-test.yml up --abort-on-container-exit --exit-code-from server-test
 
 # .PHONY: default help build start stop clean clean-dist clean-deps clean-dev test
 .PHONY: default help build start stop clean clean-dist clean-deps clean-dev

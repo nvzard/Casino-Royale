@@ -6,6 +6,7 @@ import (
 
 	ginzap "github.com/gin-contrib/zap"
 	"github.com/gin-gonic/gin"
+	"github.com/nvzard/casino-royale/controller"
 	"github.com/nvzard/casino-royale/utils"
 	"go.uber.org/zap"
 )
@@ -29,12 +30,17 @@ func SetupApiServer() *gin.Engine {
 	r.GET("/", root)
 	r.GET("/health", healthcheck)
 
+	// Deck API routes
+	r.POST("/deck", controller.CreateDeck)
+	r.GET("/deck/:deck_id", controller.OpenDeck)
+	r.POST("/deck/:deck_id/draw", controller.Draw)
+
 	return r
 }
 
 func root(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
-		"message": "Hello from Casino Royale!",
+		"message": "Hello from the Casino Royale API!",
 	})
 }
 

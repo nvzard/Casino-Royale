@@ -1,0 +1,1 @@
+{"buildTargets":["build","clean","clean-deps","clean-dev","clean-dist","clean-test","default","help","start","stop","test"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
