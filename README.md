@@ -13,13 +13,13 @@
 <!-- An API to simulate a deck of cards -->
 ## Documentation
 
-- [Summary]
-- [Development Setup](#getting-started-with-development)
+- [Summary](#summary)
+- [Development Setup](#development)
 - [API Documentation](#api-documentation)
 - [Future Improvements](#api-documentation)
+- [Side Note](#side-note)
 
 ---
-
 ## Summary
 
 This project exposes an API to simulate deck of cards which can be used card games.
@@ -72,9 +72,7 @@ make test
 ```
 make clean
 ```
-
 ---
-
 
 ## API Documentation
 
@@ -219,7 +217,7 @@ POST /deck/:deck_id/draw?count=2
 ```
 
 ---
-## FUTURE IMPROVEMENTS
+## Future Improvements
 
 Some of the improvements that can be made but were skipped due to time constraints.
 
@@ -229,6 +227,7 @@ Some of the improvements that can be made but were skipped due to time constrain
 - Add cleaner error handling mechanism and single data store for all error messages.
 - Setup CI/CD pipeline for testing and deployment.
 
-## SIDE NOTE
+---
+## Side Note
 
 This was my first ever go project. Please open an issue and let me know incase I messed something up.
