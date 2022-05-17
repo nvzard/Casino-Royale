@@ -13,11 +13,17 @@
 <!-- An API to simulate a deck of cards -->
 ## Documentation
 
+- [Summary]
 - [Development Setup](#getting-started-with-development)
 - [API Documentation](#api-documentation)
 - [Future Improvements](#api-documentation)
 
 ---
+
+## Summary
+
+This project exposes an API to simulate deck of cards which can be used card games.
+
 ## Development
 
 ### Requirements
@@ -59,6 +65,12 @@ make start
 
 ```
 make test
+```
+
+### Remove all artifacts and dependencies
+
+```
+make clean
 ```
 
 ---

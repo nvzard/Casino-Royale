@@ -35,5 +35,4 @@ test: clean-test
 	@docker-compose -f docker-compose-test.yml build
 	@docker-compose -f docker-compose-test.yml up --abort-on-container-exit --exit-code-from server-test
 
-# .PHONY: default help build start stop clean clean-dist clean-deps clean-dev test
-.PHONY: default help build start stop clean clean-dist clean-deps clean-dev
+.PHONY: default help build start stop clean clean-dist clean-deps clean-dev test
