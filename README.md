@@ -2,14 +2,6 @@
 <img width="668" alt="Screenshot 2022-05-17 at 1 08 21 PM" src="https://user-images.githubusercontent.com/19310512/168756153-2892a485-d826-4e5d-bfc6-9e97c8110f31.png">
 </p>
 
-<!-- <p align="center">
-<img width="480" alt="Screenshot 2022-05-17 at 1 10 41 PM" src="https://user-images.githubusercontent.com/19310512/168756596-97c15f7f-523a-4d8a-82a0-fe5291f4d4b5.png">
-</p>
-
-<p align="center">
-<img width="533" alt="Screenshot 2022-05-17 at 1 12 18 PM" src="https://user-images.githubusercontent.com/19310512/168756889-ef692ef7-a393-4164-a288-0f348ddcf533.png">
-</p> -->
-
 <!-- An API to simulate a deck of cards -->
 ## Documentation
 
