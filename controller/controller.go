@@ -7,15 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/nvzard/casino-royale/model"
 	"github.com/nvzard/casino-royale/service"
-	"github.com/nvzard/casino-royale/utils"
-	"go.uber.org/zap"
 )
-
-var logger *zap.SugaredLogger
-
-func init() {
-	logger = utils.GetLogger()
-}
 
 // CreateDeck Controller
 func CreateDeck(c *gin.Context) {
