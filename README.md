@@ -214,7 +214,7 @@ POST /deck/:deck_id/draw?count=2
 Some of the improvements that can be made but were skipped due to time constraints.
 
 - Write more tests and improve code coverage.
-- Fix flakey live reload.
+- Fix flaky live reload.
 - Improve controller function logic
 - Add cleaner error handling mechanism and single data store for all error messages.
 - Setup CI/CD pipeline for testing and deployment.
