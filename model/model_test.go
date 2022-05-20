@@ -12,7 +12,7 @@ func TestGetRemaining(t *testing.T) {
 
 	cards := []string{"AC", "2S", "4C"}
 	deck := Deck{DeckID: uuid.New(), IsShuffled: false, Cards: cards}
-	assert.Equal(deck.Remaining(), int64(3))
+	assert.Equal(deck.Remaining(), 3)
 }
 
 func TestShuffle(t *testing.T) {

@@ -16,8 +16,8 @@ type Deck struct {
 	Cards      pq.StringArray `gorm:"type:varchar(255)[]"`
 }
 
-func (deck *Deck) Remaining() int64 {
-	return int64(len(deck.Cards))
+func (deck *Deck) Remaining() int {
+	return len(deck.Cards)
 }
 
 func (deck *Deck) Shuffle() {
@@ -40,7 +40,7 @@ type CardsJSON struct {
 type CreatedDeckJSON struct {
 	DeckID     uuid.UUID `json:"deck_id"`
 	IsShuffled bool      `json:"shuffled"`
-	Remaining  int64     `json:"remaining"`
+	Remaining  int       `json:"remaining"`
 }
 
 type OpenDeckJSON struct {
