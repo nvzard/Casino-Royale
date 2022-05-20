@@ -5,7 +5,6 @@ import (
 	"strconv"
 
 	"github.com/gin-gonic/gin"
-	"github.com/nvzard/casino-royale/model"
 	"github.com/nvzard/casino-royale/service"
 )
 
@@ -70,14 +69,7 @@ func Draw(c *gin.Context) {
 		return
 	}
 
-	remaining := int(deck.Remaining())
-	if remaining < count {
-		count = remaining
-	}
+	drawnCards := service.DrawCard(deck, count)
 
-	drawnCards := deck.Cards[:count] // Draw first `count` number of cards
-	deck.Cards = deck.Cards[count:]  // Remove drawn cards from the original deck
-	service.UpdateDeck(deck)
-
-	c.JSON(http.StatusOK, gin.H{"cards": model.ToCardsJSON(drawnCards)})
+	c.JSON(http.StatusOK, gin.H{"cards": drawnCards})
 }

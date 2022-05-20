@@ -19,28 +19,10 @@ func init() {
 	logger = utils.GetLogger()
 }
 
-// CreateDeck creates a new deck
+// CreateDeck creates creates a fresh deck using custom cards and shuffle config
 func CreateDeck(cards []string, shuffle bool) (model.Deck, error) {
-	deck, err := newDeck(cards, shuffle)
-
-	return deck, err
-}
-
-// OpenDeck returns a new deck
-func OpenDeck(deckID string) (model.Deck, error) {
-	deck, err := getDeck(deckID)
-
-	return deck, err
-}
-
-// UpdateDeck updates the deck
-func UpdateDeck(deck model.Deck) {
-	database.DB.Save(&deck)
-}
-
-// newDeck creates a fresh deck using custom cards and shuffle config
-func newDeck(cards []string, shuffle bool) (model.Deck, error) {
 	deck := model.Deck{DeckID: uuid.New(), Cards: cards, IsShuffled: shuffle}
+
 	if deck.IsShuffled {
 		deck.Shuffle()
 	}
@@ -53,6 +35,7 @@ func newDeck(cards []string, shuffle bool) (model.Deck, error) {
 		}
 		return nil
 	})
+
 	if err != nil {
 		logger.Errorw("Failed to create deck", "error", err)
 		return deck, err
@@ -61,8 +44,8 @@ func newDeck(cards []string, shuffle bool) (model.Deck, error) {
 	return deck, nil
 }
 
-// getDeck returns the deck
-func getDeck(deckID string) (model.Deck, error) {
+// OpenDeck returns a new deck
+func OpenDeck(deckID string) (model.Deck, error) {
 	var deck model.Deck
 
 	if err := database.DB.First(&deck, "deck_id = ?", deckID).Error; err != nil {
@@ -70,6 +53,22 @@ func getDeck(deckID string) (model.Deck, error) {
 	}
 
 	return deck, nil
+}
+
+// DrawCard draws `count` number of card from the deck
+func DrawCard(deck model.Deck, count int) model.CardsJSON {
+	remaining := int(deck.Remaining())
+	if remaining < count {
+		count = remaining
+	}
+
+	drawnCards := deck.Cards[:count] // Draw first `count` number of cards
+	deck.Cards = deck.Cards[count:]  // Remove drawn cards from the original deck
+
+	// Update the deck
+	database.DB.Save(&deck)
+
+	return model.ToCardsJSON(drawnCards)
 }
 
 // CreateDefaultCardSequence returns [`ValueSuit`] sequence for all 52 cards
