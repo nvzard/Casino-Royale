@@ -1,3 +1,5 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/f2b7b99e9c1d1c93ca47/maintainability)](https://codeclimate.com/github/nvzard/Casino-Royale/maintainability)
+
 <p align="center">
 <img width="668" alt="Screenshot 2022-05-17 at 1 08 21 PM" src="https://user-images.githubusercontent.com/19310512/168756153-2892a485-d826-4e5d-bfc6-9e97c8110f31.png">
 </p>
