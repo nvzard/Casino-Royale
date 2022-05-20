@@ -85,7 +85,6 @@ func CreateDefaultCardSequence() (codes []string) {
 
 func isValidCardCode(cards []string) bool {
 	for _, card := range cards {
-		// todo: remove code duplication
 		byteSlice := []byte(card)
 		suitValue := string(byteSlice[len(byteSlice)-1])
 		cardValue := string(byteSlice[:len(byteSlice)-1])

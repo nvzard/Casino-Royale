@@ -216,12 +216,12 @@ POST /deck/:deck_id/draw?count=2
 Some of the improvements that can be made but were skipped due to time constraints.
 
 - Write more tests and improve code coverage.
-- Fix flaky live reload.
 - Improve controller function logic
 - Add cleaner error handling mechanism and single data store for all error messages.
 - Setup CI/CD pipeline for testing and deployment.
+- Add some kind of authentication mechanism.
 
 ---
 ## Side Note
 
-This was my first ever go project. Please open an issue and let me know incase I messed something up.
+This was my first ever go project. Please open an issue and let me know incase I messed something up. Some feedback would really help me up my go game.
