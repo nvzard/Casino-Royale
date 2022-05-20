@@ -69,7 +69,7 @@ func Draw(c *gin.Context) {
 		return
 	}
 
-	drawnCards := service.DrawCard(deck, count)
+	drawnCards := service.DrawCards(deck, count)
 
 	c.JSON(http.StatusOK, gin.H{"cards": drawnCards})
 }

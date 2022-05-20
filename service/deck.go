@@ -55,8 +55,8 @@ func OpenDeck(deckID string) (model.Deck, error) {
 	return deck, nil
 }
 
-// DrawCard draws `count` number of card from the deck
-func DrawCard(deck model.Deck, count int) model.CardsJSON {
+// DrawCards draws `count` number of card from the deck
+func DrawCards(deck model.Deck, count int) model.CardsJSON {
 	remaining := int(deck.Remaining())
 	if remaining < count {
 		count = remaining
