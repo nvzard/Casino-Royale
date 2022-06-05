@@ -24,6 +24,17 @@ services:
       - db-data-sync:/var/lib/postgresql/data
     env_file:
       - config/env/development.env
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    volumes:
+      - grafana:/var/lib/grafana
+      - ./config/monitoring/grafana.yml:/etc/grafana/provisioning/datasources/datasource.yaml
+    ports:
+      - 3004:3000
+    user: "472"
+    depends_on:
+      - prometheus
   prometheus:
     image: prom/prometheus:latest
     container_name: prometheus
@@ -34,6 +45,7 @@ services:
     volumes:
       - ./config/monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
 volumes:
+  grafana:
   code-sync:
     external: true
   db-data-sync: {}
