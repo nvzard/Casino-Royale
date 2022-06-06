@@ -24,7 +24,7 @@ Written in Go (Golang 1.18) using [gin](https://github.com/gin-gonic/gin) as web
 
 - Use `make build` to build the web server and `make start` to start the server. Server runs on `localhost:8080`.
 - Use `make test` runs the tests in a seperate docker container for isolation.
-- [Air](https://github.com/cosmtrek/air) and docker-sync are use for live reloading during development.
+- [Air](https://github.com/cosmtrek/air) and docker-sync are used for live reloading during development.
 - Grafana dashboard is avaialble on `localhost:3004`
 - Prometheus UI is accessible on `localhost:9090`
 
@@ -225,11 +225,11 @@ POST /deck/:deck_id/draw?count=2
 
 Some of the improvements that can be made but were skipped due to time constraints.
 
+- Refactor project structure to follow go guidelines. Currently it is similar to Rails/JS ecosystem.
 - Write more tests and improve code coverage.
-- Improve controller function logic
-- Add cleaner error handling mechanism and single data store for all error messages.
+- Add error handling mechanism and single store for all strings.
 - Setup CI/CD pipeline for testing and deployment.
-- Add some kind of authentication mechanism.
+- Add some kind of authentication mechanism. Basic Auth or JWT.
 
 ---
 ## Side Note
