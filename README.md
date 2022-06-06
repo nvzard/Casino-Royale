@@ -22,6 +22,10 @@ This project exposes an API to simulate deck of cards which can be used for card
 
 Written in Go (Golang 1.18) using [gin](https://github.com/gin-gonic/gin) as web framework, [Postgres](https://github.com/postgres/postgres) as database, [zap](https://github.com/uber-go/zap) for logging, [prometheus](https://github.com/prometheus/prometheus) and [grafana](https://github.com/grafana/grafana) for monitoring.
 
+- Use `make build` to build the server and `make start` to start the server.
+- Use `make test` runs the tests in a seperate docker container for isolation.
+- [Air](https://github.com/cosmtrek/air) and docker-sync are use for live reloading during development.
+
 ## Development
 
 ### Requirements
