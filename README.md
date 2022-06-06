@@ -26,7 +26,7 @@ Written in Go (Golang 1.18) using [gin](https://github.com/gin-gonic/gin) as web
 - Use `make test` runs the tests in a seperate docker container for isolation.
 - [Air](https://github.com/cosmtrek/air) and docker-sync are use for live reloading during development.
 - Grafana dashboard is avaialble on `localhost:3004`
-- Promethious UI is accessible on `localhost:9090`
+- Prometheus UI is accessible on `localhost:9090`
 
 ## Development
 
