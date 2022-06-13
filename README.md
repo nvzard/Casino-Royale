@@ -234,4 +234,4 @@ Some of the improvements that can be made but were skipped due to time constrain
 ---
 ## Side Note
 
-This was my first ever go project. Please open an issue and let me know incase I messed something up. Some feedback would really help me up my go game.
+Please open an issue and let me know incase I messed something up. Some feedback would really help me up my go game.
